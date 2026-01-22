@@ -1,0 +1,271 @@
+.section {
+    background-color: var(--color-dark);
+    padding: var(--space-20) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-8);
+}
+
+.header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-12);
+}
+
+.eyebrow {
+    display: block;
+    color: var(--color-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+}
+
+.title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+}
+
+.accent {
+    color: var(--color-orange);
+}
+
+.description {
+    font-size: var(--text-lg);
+    color: var(--color-gray-400);
+    line-height: 1.6;
+}
+
+.contactCard {
+    background: rgba(26, 31, 46, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gray-200);
+}
+
+.required {
+    color: #ff4d4d;
+    margin-left: 4px;
+}
+
+.input,
+.textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    color: white;
+    font-size: var(--text-base);
+    transition: all var(--transition-normal);
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--color-orange);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-2);
+}
+
+.serviceCheckbox {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.serviceCheckbox:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-orange);
+}
+
+.serviceCheckbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-orange);
+}
+
+.serviceLabel {
+    font-size: var(--text-sm);
+    cursor: pointer;
+    color: var(--color-gray-300);
+}
+
+.customInputWrapper {
+    margin-top: var(--space-4);
+}
+
+.submitBtn {
+    width: 100%;
+    padding: var(--space-5);
+    background: linear-gradient(135deg, var(--color-orange) 0%, #ff8c42 100%);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(232, 93, 38, 0.3);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.submitIcon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Popup Styles */
+.popupOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--space-4);
+}
+
+.popupContent {
+    background: var(--color-navy);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12) var(--space-8);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.popupClose {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: none;
+    border: none;
+    color: var(--color-gray-500);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popupIcon {
+    width: 80px;
+    height: 80px;
+    background: rgba(37, 211, 102, 0.1);
+    color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 0 auto var(--space-6);
+}
+
+.popupTitle {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+}
+
+.popupText {
+    color: var(--color-gray-400);
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+}
+
+.popupBtn {
+    width: 100%;
+    padding: var(--space-4);
+    background: var(--color-white);
+    color: var(--color-navy);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.popupBtn:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .contactCard {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+}

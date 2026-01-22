@@ -1,0 +1,39 @@
+/* Tokens */
+@import './styles/tokens/colors.css';
+@import './styles/tokens/spacing.css';
+@import './styles/tokens/typography.css';
+
+/* Base */
+@import './styles/base/reset.css';
+@import './styles/base/typography.css';
+@import './styles/base/utilities.css';
+
+/* Custom Global Styles */
+:root {
+    --header-height: 80px;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-navy);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+}

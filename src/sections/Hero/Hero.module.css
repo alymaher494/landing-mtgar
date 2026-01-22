@@ -1,0 +1,157 @@
+.wrapper {
+    position: relative;
+    height: 300vh;
+    /* More cinematic scroll space for sync */
+}
+
+.heroSection {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-image: radial-gradient(circle at 50% 50%, rgba(232, 93, 38, 0.05) 0%, transparent 70%);
+}
+
+.heroSection :global(.container) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-8);
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.content {
+    text-align: start;
+    max-width: 600px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+}
+
+.badge {
+    padding: var(--space-2) var(--space-4);
+    background: rgba(232, 93, 38, 0.1);
+    border: 1px solid rgba(232, 93, 38, 0.2);
+    border-radius: var(--radius-full);
+    color: var(--color-orange);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+}
+
+.subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-gray-400);
+    max-width: 600px;
+}
+
+.actions {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+/* Visual Elements */
+.visualContainer {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainVisual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    /* FIXED: Visibility restored */
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+
+.orbit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+}
+
+.orbitIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    margin: -24px;
+    transform: rotate(calc(var(--index) * 45deg)) translate(300px) rotate(calc(var(--index) * -45deg));
+    background: rgba(26, 31, 46, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: var(--color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.orbitIcon svg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        height: auto;
+    }
+
+    .heroSection {
+        position: relative;
+        height: auto;
+        padding-top: var(--space-20);
+        padding-bottom: var(--space-20);
+    }
+
+    .visualContainer {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orbitIcon {
+        transform: rotate(calc(var(--index) * 45deg)) translate(130px) rotate(calc(var(--index) * -45deg));
+        width: 40px;
+        height: 40px;
+        margin: -20px;
+    }
+}
