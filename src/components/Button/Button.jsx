@@ -9,9 +9,18 @@ const Button = ({
     onClick,
     type = 'button',
     disabled = false,
+    href,
     ...props
 }) => {
     const buttonClass = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`;
+
+    if (href) {
+        return (
+            <a href={href} className={buttonClass} {...props}>
+                {children}
+            </a>
+        );
+    }
 
     return (
         <button

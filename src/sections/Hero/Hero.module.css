@@ -88,7 +88,6 @@
     align-items: center;
     justify-content: center;
     opacity: 1;
-    /* FIXED: Visibility restored */
 }
 
 .logo {
@@ -131,6 +130,25 @@
     height: 100%;
 }
 
+@media (max-width: 1024px) {
+    .heroSection :global(.container) {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: var(--space-12);
+    }
+
+    .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .visualContainer {
+        width: 400px;
+        height: 400px;
+    }
+}
+
 @media (max-width: 768px) {
     .wrapper {
         height: auto;
@@ -139,13 +157,15 @@
     .heroSection {
         position: relative;
         height: auto;
-        padding-top: var(--space-20);
+        padding-top: var(--space-24);
         padding-bottom: var(--space-20);
     }
 
     .visualContainer {
         width: 300px;
         height: 300px;
+        order: -1;
+        /* Move visual above content on mobile */
     }
 
     .orbitIcon {
